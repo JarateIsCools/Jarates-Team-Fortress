@@ -127,6 +127,7 @@ private:
 	bool			m_bFire2MinRemain;
 	bool			m_bFire1MinRemain;
 	bool			m_bFire30SecRemain;
+	bool			m_bFireSetupMusic;
 	bool			m_bFire10SecRemain;
 	bool			m_bFire5SecRemain;
 	bool			m_bFire4SecRemain;

@@ -35,6 +35,7 @@
 #define ROUND_TIMER_2SECS	"Announcer.RoundEnds2seconds"
 #define ROUND_TIMER_1SECS	"Announcer.RoundEnds1seconds"
 
+#define ROUND_SETUP_MUSIC	"music.setup"
 #define ROUND_SETUP_60SECS	"Announcer.RoundBegins60Seconds"
 #define ROUND_SETUP_30SECS	"Announcer.RoundBegins30Seconds"
 #define ROUND_SETUP_10SECS	"Announcer.RoundBegins10Seconds"
@@ -279,6 +280,7 @@ void CTeamRoundTimer::Precache( void )
 	PrecacheScriptSound( ROUND_TIMER_3SECS );
 	PrecacheScriptSound( ROUND_TIMER_2SECS );
 	PrecacheScriptSound( ROUND_TIMER_1SECS );
+	PrecacheScriptSound( ROUND_SETUP_MUSIC );
 	PrecacheScriptSound( ROUND_SETUP_60SECS );
 	PrecacheScriptSound( ROUND_SETUP_30SECS );
 	PrecacheScriptSound( ROUND_SETUP_10SECS );
@@ -484,6 +486,7 @@ void CTeamRoundTimer::ClientThink()
 	else if ( flTime <= 31.0 && m_bFire30SecRemain )
 	{
 		m_bFire30SecRemain = false;
+		m_bFireSetupMusic = true;
 		SendTimeWarning( RT_WARNING_30SECS );
 	}
 	else if ( flTime <= 11.0 && m_bFire10SecRemain )
@@ -775,6 +778,11 @@ void CTeamRoundTimer::SendTimeWarning( int nWarning )
 				if ( bShouldPlaySound == true )
 				{
 					pPlayer->EmitSound( GetTimeWarningSound( nWarning ) );
+				}
+				if ( m_bFireSetupMusic == true )
+				{
+					m_bFireSetupMusic = false;
+					pPlayer->EmitSound(ROUND_SETUP_MUSIC);
 				}
 #endif // TF_CLIENT_DLL
 			}
