@@ -4661,7 +4661,14 @@ const char* CTFGameRules::WinSongName( int nTeam )
 			: "Announcer.Helltower_Hell_Blue_Win";
 	}
 
-	return "Game.YourTeamWon"; 
+	if ( nTeam == TF_TEAM_RED )
+	{
+		return "Game.RedTeamWon";
+	}
+	else
+	{
+		return "Game.BlueTeamWon";
+	}
 }
 
 
