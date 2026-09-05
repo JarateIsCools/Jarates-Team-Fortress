@@ -78,6 +78,14 @@
 	"wave"		"#*music/class_menu_06.wav"
 }
 
+"music.class_menu_010"
+{
+	"channel"		"CHAN_STATIC"
+	"soundlevel"		"SNDLVL_NONE"
+	"volume"		"0.55"
+	"wave"		"#*music/class_menu_06.wav"
+}
+
 "music.mvm_class_menu"
 {
 	"channel"		"CHAN_STATIC"

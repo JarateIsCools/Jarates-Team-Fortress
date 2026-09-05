@@ -1,0 +1,61 @@
+// Choreo version 1
+actor "spy"
+{
+  channel "audio"
+  {
+    event expression "madUpper"
+    {
+      time 1.056819 4.305871
+      param "player\spy\emotion\emotion"
+      param2 "madUpper"
+      event_ramp
+      {
+        0.1970 0.7002 "curve_kochanek_late_to_curve_kochanek_late"
+        1.4273 0.7326 "curve_bspline_to_curve_bspline"
+        1.6295 0.7342 "curve_bspline_to_curve_bspline"
+        3.0515 0.7249
+      }
+    }
+    event flexanimation "Smile"
+    {
+      time 0.090909 4.196969
+      param ""
+      flexanimations samples_use_time defaultcurvetype=curve_catmullrom_normalize_x_to_curve_catmullrom_normalize_x
+      {
+        "Smile01" 
+        {
+          1.6745 0.2500
+        }
+      }
+    }
+    event speak "Spy.Tietaunt8"
+    {
+      time 0.045455 4.251169
+      param "Spy.Tietaunt8"
+      fixedlength
+      cctype "cc_master"
+      cctoken ""
+    }
+  }
+  channel "face"
+  {
+    event sequence "taunt01_v1"
+    {
+      time 0.000000 4.300000
+      param "taunt01"
+      fixedlength
+    }
+  }
+}
+
+scalesettings
+{
+  "CChoreoView" "44"
+  "ExpressionTool" "100"
+  "RampTool" "22"
+  "GestureTool" "100"
+  "SceneRampTool" "100"
+}
+fps 60
+snap off
+ignorePhonemes off

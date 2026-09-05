@@ -490,6 +490,7 @@ CTFClassMenu::CTFClassMenu( IViewPort *pViewPort )
 	m_pClassButtons[TF_CLASS_SNIPER] = new CExImageButton( this, "sniper", "", this );
 	m_pClassButtons[TF_CLASS_ENGINEER] = new CExImageButton( this, "engineer", "", this );
 	m_pClassButtons[TF_CLASS_SPY] = new CExImageButton( this, "spy", "", this );
+	m_pClassButtons[TF_CLASS_CIVILIAN] = new CExImageButton(this, "civilian", "", this);
 	m_pClassButtons[TF_CLASS_RANDOM] = new CExImageButton( this, "random", "", this );
 #endif
 
@@ -875,14 +876,14 @@ void CTFClassMenu::OnKeyCodePressed( KeyCode code )
 {
 	m_KeyRepeat.KeyDown( code );
 
-	if ( code > KEY_0 && code <= KEY_9 )
+	if ( code >= KEY_0 && code <= KEY_9 )
 	{
 		const int iButton = code - KEY_0;
 		const int iClass = iRemapIndexToClass[ iButton ];
 		SelectClass( iClass );
 		Go();
 	}
-	else if ( code > KEY_PAD_0 && code <= KEY_PAD_9 )
+	else if ( code >= KEY_PAD_0 && code <= KEY_PAD_9 )
 	{
 		const int iButton = code - KEY_PAD_0;
 		const int iClass = iRemapIndexToClass[ iButton ];
@@ -896,9 +897,7 @@ void CTFClassMenu::OnKeyCodePressed( KeyCode code )
 	else if ( ( m_iClassMenuKey != BUTTON_CODE_INVALID && m_iClassMenuKey == code ) ||
 		code == KEY_XBUTTON_BACK || 
 		code == KEY_XBUTTON_B ||
-		code == STEAMCONTROLLER_B ||
-		code == KEY_0 || 
-		code == KEY_PAD_0 )
+		code == STEAMCONTROLLER_B )
 	{
 		C_TFPlayer *pLocalPlayer = C_TFPlayer::GetLocalTFPlayer();
 
@@ -1351,11 +1350,11 @@ static const char *g_sDialogVariables[] = {
 	"numMedic",
 	"numSniper",
 	"numSpy",
-	"",
+	"numCivilian",
 };
 
 static const char *g_sClassImagesBlue[] = {
-	"",
+	"class_sel_sm_civilian_blu",
 	"class_sel_sm_scout_blu",
 	"class_sel_sm_soldier_blu",
 	"class_sel_sm_pyro_blu",
@@ -1372,7 +1371,7 @@ static const char *g_sClassImagesBlue[] = {
 };
 
 static const char *g_sClassImagesRed[] = {
-	"",
+	"class_sel_sm_civilian_red",
 	"class_sel_sm_scout_red",
 	"class_sel_sm_soldier_red",
 	"class_sel_sm_pyro_red",

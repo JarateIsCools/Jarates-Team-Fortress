@@ -215,7 +215,7 @@ int GetClassIndexFromString( const char *pClassName, int nLastClassIndex/*=TF_LA
 
 int iRemapIndexToClass[TF_CLASS_MENU_BUTTONS] =
 {
-	0,
+		TF_CLASS_CIVILIAN,
 		TF_CLASS_SCOUT,
 		TF_CLASS_SOLDIER,
 		TF_CLASS_PYRO,

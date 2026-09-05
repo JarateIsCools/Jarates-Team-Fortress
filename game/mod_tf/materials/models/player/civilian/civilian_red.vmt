@@ -1,0 +1,5 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "models/player/civilian/civilian_red"
+	"$cloakPassEnabled" "1"
+}

@@ -6856,7 +6856,7 @@ void CTFPlayer::HandleCommand_JoinClass( const char *pClassName, bool bAllowSpaw
 			}
 		}
 		 
-		bool bCivilianOkay = false;
+		bool bCivilianOkay = true;
 
 		if ( !bCivilianOkay && ( i >= TF_LAST_NORMAL_CLASS ) )
 		{
@@ -6874,10 +6874,10 @@ void CTFPlayer::HandleCommand_JoinClass( const char *pClassName, bool bAllowSpaw
 	else
 	{
 		int iChoices = 0;
-		int iClasses[ TF_LAST_NORMAL_CLASS - 1 ] = {}; // -1 to remove the civilian from the randomness
+		int iClasses[ TF_LAST_NORMAL_CLASS ] = {};
 		int iCurrentClass = GetPlayerClass()->GetClassIndex();
 
-		for ( iClass = TF_FIRST_NORMAL_CLASS; iClass < TF_LAST_NORMAL_CLASS; iClass++ )
+		for ( iClass = TF_FIRST_NORMAL_CLASS; iClass <= TF_LAST_NORMAL_CLASS; iClass++ )
 		{
 			if ( iClass != iCurrentClass && TFGameRules()->CanPlayerChooseClass( this, iClass ) )
 			{
@@ -6895,7 +6895,7 @@ void CTFPlayer::HandleCommand_JoinClass( const char *pClassName, bool bAllowSpaw
 			return;
 		}
 
-		iClass = iClasses[ random->RandomInt( 0, iChoices - 1 ) ];
+		iClass = iClasses[ random->RandomInt( 0, iChoices ) ];
 	}
 
 	if ( TFGameRules() && TFGameRules()->State_Get() == GR_STATE_RND_RUNNING )
