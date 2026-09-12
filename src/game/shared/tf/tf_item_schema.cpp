@@ -1362,8 +1362,7 @@ void CTFItemDefinition::FilloutSlotUsage( CBitVec<LOADOUT_COUNT> *pBV ) const
 //-----------------------------------------------------------------------------
 bool CTFItemDefinition::CanBeUsedByAllClasses( void ) const
 {
-	// Right now, Civilian isn't a real class, so we only have 9 classes in this check
-	for ( int iClass = 1; iClass < (LOADOUT_COUNT-1); iClass++ )
+	for ( int iClass = 1; iClass < (LOADOUT_COUNT+1); iClass++ )
 	{
 		if ( !CanBeUsedByClass(iClass) )
 			return false;
@@ -1465,6 +1464,7 @@ static PlayerClassInfo_t gs_PlayerClassData[] =
 	{ "Pyro",		"#TF_Class_Name_Pyro" },
 	{ "Spy",		"#TF_Class_Name_Spy" },
 	{ "Engineer",	"#TF_Class_Name_Engineer" },
+	{ "Civilian",	"#TF_Class_Name_Civilian" },
 	{ "Invalid",	"" }						// lots of code loops over these classes based on LOADOUT_COUNT, which is wrong, but this allows them to do it safely
 };
 

@@ -10,16 +10,16 @@
 	{
 		"21000"
 		{
-			"name"				"Umbrella"
+			"name"				"Nail Gun"
 			"mod_tf_item"		"1"
-			"prefab"			"weapon_scattergun"
-			"item_name"			"#TF_Weapon_Umbrella"
-			"item_description"	"#TF_Weapon_Umbrella"
-			"item_logname"		"Umbrella"
+			"prefab"			"weapon_syringegun"
+			"item_name"			"#TF_Weapon_Nailgun"
+			"item_description"	"#TF_Weapon_Nailgun"
+			"item_logname"		"Nail Gun"
 			"item_quality"		"unique"
 			"used_by_classes"
 			{
-				"civilian" "1"
+				"scout" "1"
 			}
 			"attributes"
 			{
