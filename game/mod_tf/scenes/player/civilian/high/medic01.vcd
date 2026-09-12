@@ -5,7 +5,7 @@ actor "spy"
   {
     event speak "Spy.Medic01"
     {
-      time -0.010417 0.761647
+      time -0.010417 0.825501
       param "Spy.Medic01"
       fixedlength
       cctype "cc_master"
@@ -28,6 +28,7 @@ actor "spy"
   channel "face"
   {
   }
+  faceposermodel "models\player\civilian.mdl"
 }
 
 scalesettings

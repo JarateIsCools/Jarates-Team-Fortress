@@ -1,0 +1,39 @@
+#base items_game.txt
+
+"items_game"
+{
+	"attributes"
+	{
+	}
+	
+	"items"
+	{
+		"21000"
+		{
+			"name"				"Umbrella"
+			"mod_tf_item"		"1"
+			"prefab"			"weapon_scattergun"
+			"item_name"			"#TF_Weapon_Umbrella"
+			"item_description"	"#TF_Weapon_Umbrella"
+			"item_logname"		"Umbrella"
+			"item_quality"		"unique"
+			"used_by_classes"
+			{
+				"civilian" "1"
+			}
+			"attributes"
+			{
+				"bleeding duration"
+				{
+					"attribute_class" 	"bleeding_duration"
+					"value"				"5"
+				}
+				"damage penalty"
+				{
+					"attribute_class"	"mult_dmg"
+					"value"				"0.80"
+				}
+			}
+		}
+	}
+}

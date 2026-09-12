@@ -5,13 +5,14 @@ actor "Civilian"
   {
     event speak "Civilian.Medic01"
     {
-      time -0.000000 0.772063
+      time -0.000000 0.835918
       param "Civilian.Medic01"
       fixedlength
       cctype "cc_master"
       cctoken ""
     }
   }
+  faceposermodel "models\player\civilian.mdl"
 }
 
 scalesettings
